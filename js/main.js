@@ -7,21 +7,37 @@ Clicchiamo sui pallini e mostriamo l’immagine corrispondente
 Generiamo i pallini con JS   */
 
 $(function(){
-
   $(".prev").click(
-
+    function() {
+      prevImage();
+    }
   );
-
   $(".next").click(
     function() {
+      nextImage();
+    }
+  );
+});
+
+
+
+
+function nextImage() {
       var showImage = $('.images img.active');
       showImage.removeClass("active");
       if (showImage.hasClass("last") == true ) {
         $(".images img.first").addClass("active")
       }else {
-        showImage.next().addClass("active");    
+        showImage.next().addClass("active");
       }
-    }
-  );
+};
 
-});
+function prevImage() {
+      var showImage = $('.images img.active');
+      showImage.removeClass("active");
+      if (showImage.hasClass("first") == true ) {
+        $(".images img.last").addClass("active")
+      }else {
+        showImage.next().addClass("active");
+      }
+};
