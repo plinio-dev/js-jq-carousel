@@ -17,6 +17,16 @@ $(function(){
       nextImage();
     }
   );
+
+  $(document).keydown(
+    function(e) {
+        if(e.keyCode == 37) {
+          prevImage();
+        }else if (e.keyCode == 39) {
+          nextImage();
+        }
+    });
+
 });
 
 
