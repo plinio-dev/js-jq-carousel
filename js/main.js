@@ -22,10 +22,11 @@ $(function(){
     function(e) {
         if(e.keyCode == 37) {
           prevImage();
+
         }else if (e.keyCode == 39) {
           nextImage();
         }
-    });
+  });
 
 });
 
@@ -48,6 +49,6 @@ function prevImage() {
       if (showImage.hasClass("first") == true ) {
         $(".images img.last").addClass("active")
       }else {
-        showImage.next().addClass("active");
+        showImage.prev().addClass("active");
       }
 };
